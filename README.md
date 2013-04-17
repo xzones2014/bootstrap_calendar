@@ -1,33 +1,23 @@
-BIC Calendar
-============
+#Bootstrap Calendar
+a simple calendar plugin for jQuery and Twitter Bootstrap.
 
-ca - BIC Calendar es un simple calendari per marcar esdeveniments. Un plugin de jQuery i Twitter Bootstrap.
+##Dependencies
+- [jQuery 1.7.2+](http://jquery.com/)
+- [Twitter Bootstrap 2.0](http://twitter.github.io/bootstrap/)
 
-en - BIC Calendar is a simple calendar to mark events, a jQuery plugin and Twitter Bootstrap.
+##Options
+- popover_options ([Bootstrap popover](http://twitter.github.io/bootstrap/javascript.html#popovers) object)
 
+- tooltip_options ([Bootstrap tooltip](http://twitter.github.io/bootstrap/javascript.html#tooltips) object)
 
-Dependencias
-------------
+- days (array)
+	- default: default: ["S", "M", "T", "W", "T", "F", "S"]
 
-- ~jQuery 1.7.2
-- ~Twitter Bootstrap 2.0
-
-
-Options
--------
-
-- dias (array)
-	- default: ["l", "m", "x", "j", "v", "s", "d"]
-
-- nombresMes (array)
-	- default: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+- months (array)
+	- default: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 - show_days (boolean)
 	- default: true
-
-- popover_options (`popover Twitter Bootstrap<http://twitter.github.com/bootstrap/javascript.html#popovers>`_ object)
-
-- tooltip_options (`tooltip Twitter Bootstrap<http://twitter.github.com/bootstrap/javascript.html#tooltips>`_ object)
 
 - req_ajax (object)
 	- req_ajax.type (string) {'get', 'post'}
@@ -39,59 +29,107 @@ Options
 
 - Event (array)
 	- 0 (string): date
-	ex: "17/8/1989"
+	ex: "17/4/2013"
 	- 1 (string): title
-	ex: "Event Barberà"
+	ex: "hello world!"
 	- 2 (string): link
-	ex: "http://google.es"
+	ex: "http://github.com"
 	- 3 (string): color
 	ex: "#333"
 	- 4 (string): html popover
 	ex: "Text for the content of popover...description of event...image..."
 
 
-Use example
------------
+##Use example
 
-Note that each event of the exemple have a diferent behavior
+_Note: that each event in the example has a diferent behavior_
 
-- The blue event have a hover popover
-["27/$mes/$ano", 'Getting Contacts Barcelona', 'http://gettingcontacts.com/events/view/barcelona', 'red']
-- The green event have a click popover
-["7/$mes/$ano", '2º Getting Contacts Alaquás', 'http://gettingcontacts.com/events/view/alaquas', 'blue', 'contingut popover']
-- The red event have a hover tooltip ["17/$mes/$ano", '4º Getting Contacts Barberà', '#', '#3B4', 'contingut popover']
+The blue event has a hover popover
+```javascript
+array(
+	"27/4/2013", 
+	'github drinkup', 
+	'https://github.com/blog/category/drinkup', 
+	'blue'
+)
+```
 
-	$(document).ready( function(){
+The green event has a click popover
+```javascript
+array(
+	"7/4/2013", 
+	'bootstrap logo popover!', 
+	'#', 
+	'#51a351', 
+	'<img src="http://bit.ly/XRpKAE" />'
+)
+```
 
-		mesos = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Dicembre"];
+The red event has a hover tooltip
+```javascript
+array(
+	"17/4/2013",
+	'octocat!', 
+	'https://github.com/logos', 
+	'red', 
+	'new github logo <img src="http://git.io/Xmayvg" />'
+)
+```
 
-		dias = ["L", "M", "M", "J", "V", "S", "D"];
+#Javascript:
+```javascript
+$(document).ready( function(){
 
-	    $('#calendari_lateral1').bic_calendar({
-	        nombresMes: mesos,
-	        dias: dias,
-	        req_ajax: {
-	        	type: 'get',
-	        	url: 'index.php'
-	        }
-	    });
-	} );
+	theMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	theDays = ["S", "M", "T", "W", "T", "F", "S"];
 
-	$mes = $_GET['mes'];
-	$ano = $_GET['ano'];
+    $('#calendar_test').calendar({
+        months: theMonths,
+        days: theDays,
+        req_ajax: {
+        	type: 'get',
+        	url: 'json.php'
+        }
+    });
+});
+```
+						
 
-	$array = array(
-		array("27/$mes/$ano", 'Getting Contacts Barcelona', 'http://gettingcontacts.com/events/view/barcelona'),
-		array("7/$mes/$ano", '2º Getting Contacts Alaquás', 'http://gettingcontacts.com/events/view/alaquas', '#3B4', 'contingut popover'),
-		array("17/$mes/$ano", '4º Getting Contacts Barberà', '#', '#3B4', 'contingut popover')
-	);
+#PHP:
+```php5
+<?php
+$month = isset($_GET['month']) ? $_GET['month'] : date('n');
+$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
 
-	echo json_encode($array);
+$array = array(
+  array(
+    "7/$month/$year", 
+    'bootstrap logo popover!', 
+    '#', 
+    '#51a351', 
+    '<img src="http://bit.ly/XRpKAE" />'
+  ),
+  array(
+    "17/$month/$year", 
+    'octocat!', 
+    'https://github.com/logos', 
+    'blue', 
+    'new github logo <img src="http://git.io/Xmayvg" />'
+  ),
+  array(
+    "27/$month/$year", 
+    'github drinkup', 
+    'https://github.com/blog/category/drinkup', 
+    'red'
+  )
+);
 
+header('Content-Type: application/json');
+echo json_encode($array);
+exit;
+?>
+```
 
-Showcase
---------
-
-[http://gettingcontacts.com](http://gettingcontacts.com)
-
-[http://bic.cat/bic_calendar](http://bic.cat/bic_calendar)
+##Credits
+original [bic_calendar](https://github.com/bichotll/bic_calendar) by [bic.cat](http://bic.cat/).
+[bootstrap_calendar](https://github.com/xero/bootstrap_calendar) fork (english localization and updates) by [xero](http://xero.nu/)
