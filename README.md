@@ -7,26 +7,19 @@ a simple calendar plugin for jQuery and Twitter Bootstrap.
 
 ##Options
 - popover_options ([Bootstrap popover](http://twitter.github.io/bootstrap/javascript.html#popovers) object)
-
 - tooltip_options ([Bootstrap tooltip](http://twitter.github.io/bootstrap/javascript.html#tooltips) object)
-
 - days (array)
 	- default: default: ["S", "M", "T", "W", "T", "F", "S"]
-
 - months (array)
 	- default: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
 - show_days (boolean)
 	- default: true
-
 - req_ajax (object)
 	- req_ajax.type (string) {'get', 'post'}
 	- req_ajax.url (string)
-
 - events (array of event array)
 	- req_ajax.type (string) {'get', 'post'}
 	- req_ajax.url (string)
-
 - Event (array)
 	- 0 (string): date
 	ex: "17/4/2013"
@@ -38,7 +31,6 @@ a simple calendar plugin for jQuery and Twitter Bootstrap.
 	ex: "#333"
 	- 4 (string): html popover
 	ex: "Text for the content of popover...description of event...image..."
-
 
 ##Use example
 
@@ -76,7 +68,7 @@ array(
 )
 ```
 
-#Javascript:
+###Javascript:
 ```javascript
 $(document).ready( function(){
 
@@ -95,7 +87,7 @@ $(document).ready( function(){
 ```
 						
 
-#PHP:
+###PHP:
 ```php5
 <?php
 $month = isset($_GET['month']) ? $_GET['month'] : date('n');
@@ -132,4 +124,5 @@ exit;
 
 ##Credits
 original [bic_calendar](https://github.com/bichotll/bic_calendar) by [bic.cat](http://bic.cat/).
+
 [bootstrap_calendar](https://github.com/xero/bootstrap_calendar) fork (english localization and updates) by [xero](http://xero.nu/)
