@@ -57,14 +57,14 @@
 .calendar .visualmonthyear {
     color: #000;
 }
-.calendar * {
-    /*border: none !important;*/
+.noborder, .noborder .calendar, .noborder .calendar * {
+    border: none !important;
+}
+.dropdown-menu .calendar td a {
+    padding: 0px;
 }
 @media (max-width: 979px) {
     .nav-collapse .nav>li>a, .nav-collapse .dropdown-menu a {
         padding: 5px;
-    }
-    #overviewCalendar, #millerCalendar {
-        min-width: 250px;
     }
 }

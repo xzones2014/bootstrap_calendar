@@ -45,13 +45,38 @@
         .container{
         	max-width: 900px;
         }
+        /* custom dropdown styles */
+        .dropdown-menu {
+        	min-width: 250px; 
+        }
+		.dropdown-menu::before {
+		   position: absolute;
+		   top: -7px;
+		   left: 9px;
+		   display: inline-block;
+		   border-right: 7px solid transparent;
+		   border-bottom: 7px solid #CCC;
+		   border-left: 7px solid transparent;
+		   border-bottom-color: rgba(0, 0, 0, 0.2);
+		   content: '';
+		 }
+		.dropdown-menu::after {
+		    position: absolute;
+		    top: -6px;
+		    left: 10px;
+		    display: inline-block;
+		    border-right: 6px solid transparent;
+		    border-bottom: 6px solid white;
+		    border-left: 6px solid transparent;
+		    content: '';
+		  }        
         </style>
     </head>
     <body>
     	<div class="container">
 			<div class="hero-unit pintam">
 				<h1><i class="icon-calendar"></i>&nbsp; Bootstrap Calendar</h1><br>
-				<p>a simple calendar plugin for jQuery and Twitter Bootstrap.</p>
+				<p>a simple calendar plugin for jQuery and Twitter Bootstrap.<br/><em class="muted">Works inline, in dropdowns, and in the responsive navbar!</em></p>
 				<p class="pull-right"><a href="https://github.com/xero/bootstrap_calendar/archive/master.zip" class="btn btn-primary btn-large"><i class="icon-download-alt"></i>&nbsp;&nbsp;Download</a> &nbsp; &nbsp; <a href="https://github.com/xero/bootstrap_calendar" class="btn btn-success btn-large"><i class="icon-github-alt"></i>&nbsp;&nbsp;Browse Code</a></p>
 			</div>
 			<div class="row-fluid">
@@ -216,7 +241,17 @@ exit;
 					</div>
 				</div>
 				<div class="span4">
-			    	<div id="calendar_test"></div>
+			    	<div class="calendar_test"></div>
+			    	<br/><br/>
+					<div class="btn-group">
+						<a class="btn btn-large btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+							&nbsp;Dropdown Calendar&nbsp;&nbsp;
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="noborder calendar_test"></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<footer>
@@ -230,7 +265,7 @@ exit;
 				theMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 				theDays = ["S", "M", "T", "W", "T", "F", "S"];
 
-				$('#calendar_test').calendar({
+				$('.calendar_test').calendar({
 					months: theMonths,
 					days: theDays,
 					req_ajax: {
