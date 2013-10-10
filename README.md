@@ -1,5 +1,7 @@
 #Bootstrap Calendar
+
 A simple calendar plugin for jQuery and Twitter Bootstrap.
+
 _Works inline, in dropdowns, and in the responsive navbar!_
 
 ##Dependencies
