@@ -6,11 +6,11 @@ _Works inline, in dropdowns, and in the responsive navbar!_
 
 ##Dependencies
 - [jQuery 1.7.2+](http://jquery.com/)
-- [Twitter Bootstrap 2.0](http://twitter.github.io/bootstrap/)
+- [Twitter Bootstrap 2.x](http://getbootstrap.com/2.3.2/)
 
 ##Options
-- popover_options ([Bootstrap popover](http://twitter.github.io/bootstrap/javascript.html#popovers) object)
-- tooltip_options ([Bootstrap tooltip](http://twitter.github.io/bootstrap/javascript.html#tooltips) object)
+- popover_options ([Bootstrap popover](http://getbootstrap.com/2.3.2/javascript.html#popovers) object)
+- tooltip_options ([Bootstrap tooltip](http://getbootstrap.com/2.3.2/javascript.html#tooltips) object)
 - days (array)
 	- default: default: ["S", "M", "T", "W", "T", "F", "S"]
 - months (array)
