@@ -4,6 +4,9 @@ A simple calendar plugin for jQuery and Twitter Bootstrap.
 
 _Works inline, in dropdowns, and in the responsive navbar!_
 
+##Package Manager
+You can now install via [bower](http://bower.io/)
+
 ##Dependencies
 - [jQuery 1.7.2+](http://jquery.com/)
 - [Twitter Bootstrap 2.x](http://getbootstrap.com/2.3.2/)
