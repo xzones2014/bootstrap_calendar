@@ -70,7 +70,7 @@
                 //date calculation object
                 var dateObj = new Date();
                 //check for date input
-                var dateText = elem.val();
+                var dateText = elem.data('date');
                 if (dateText!= ""){
                     if (validateDate(dateText)){
                         var dateTextArray = dateText.split("/");
