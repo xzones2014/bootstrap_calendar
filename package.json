@@ -1,0 +1,22 @@
+{
+    "name": "bootstrap_calendar",
+    "version": "1.0.1",
+    "description": "a simple calendar plugin for jquery and twitter bootstrap. works inline, in dropdowns, and in the responsive navbar!",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xzones2014/bootstrap_calendar.git"
+    },
+    "keywords": [
+        "hypher",
+        "hyphenation",
+        "hyphen",
+        "pattern",
+        "patterns",
+        "languages"
+    ],
+    "license": "LGPL",
+    "homepage": "https://github.com/xzones2014/bootstrap_calendar#readme"
+}
