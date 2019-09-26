@@ -10,12 +10,8 @@
         "url": "git+https://github.com/xzones2014/bootstrap_calendar.git"
     },
     "keywords": [
-        "hypher",
-        "hyphenation",
-        "hyphen",
-        "pattern",
-        "patterns",
-        "languages"
+        "bootstrap",
+        "calendar"
     ],
     "license": "LGPL",
     "homepage": "https://github.com/xzones2014/bootstrap_calendar#readme"
